@@ -11,7 +11,7 @@ def retrieve_pr(repository_name, pr):
     github_api_token = os.environ["GITHUB_API_TOKEN"]
     r = requests.get("https://api.github.com/repos/" + repository_name + "/pulls/" + pr, headers={'Authorization': 'token ' + github_api_token, 'User-Agent': 'dojot-baseline-builder'})
     if "body" in r.json():
-        pr_comment = r.json()["body"] 
+        pr_comment = r.json()["body"]
         title =  r.json()["title"]
         reg = re.compile("(dojot\/dojot#.[0-9]+)")
         ret = reg.findall(pr_comment)
@@ -163,13 +163,7 @@ def push_git_tag(spec, selected_repo):
     print("... everything was pushed to GitHub.")
 
 
-def create_docker_baseline(spec, selected_repo):
-    client = docker.from_env()
-    docker_username = os.environ["DOCKER_USERNAME"]
-    docker_password = os.environ["DOCKER_TOKEN"]
-    print("Logging into Docker Hub...")
-    client.login(docker_username, docker_password)
-    print("... logged in.")
+def build_docker_baseline(spec, selected_repo):
     for repo_config in spec["components"]:
         repository_name = repo_config['repository-name']
 
@@ -186,6 +180,25 @@ def create_docker_baseline(spec, selected_repo):
 
             print("Building image for " + docker_name)
             os.system("docker build -t " + docker_name + ":" + baseline_tag_name + " --no-cache -f " + repository_dest + "/" + dockerfile + " " + repository_dest)
+
+def tag_docker_baseline(spec, selected_repo):
+    client = docker.from_env()
+    docker_username = os.environ["DOCKER_USERNAME"]
+    docker_password = os.environ["DOCKER_TOKEN"]
+    print("Logging into Docker Hub...")
+    client.login(docker_username, docker_password)
+    print("... logged in.")
+    for repo_config in spec["components"]:
+        repository_name = repo_config['repository-name']
+
+        if selected_repo != "all" and repository_name != selected_repo:
+            print("Skipping " + repository_name +
+                  " from pushing Docker images.")
+            continue
+
+        for docker_repo in repo_config["docker-hub-repositories"]:
+            docker_name = docker_repo["name"]
+            baseline_tag_name = spec["tag"]
 
             print("Pushing new tag...")
             client.images.push(docker_name + ":" + baseline_tag_name)
@@ -226,14 +239,16 @@ def main():
             checkout_git_repositories(spec, selected_repo)
         if sys.argv[1] == "backlog":
             build_backlog_messages(spec, selected_repo)
-        if sys.argv[1] == "docker":
-            create_docker_baseline(spec, selected_repo)
+        if sys.argv[1] == "build":
+            build_docker_baseline(spec, selected_repo)
+        if sys.argv[1] == "push":
+            tag_docker_baseline(spec, selected_repo)
         else:
             print("Unknown command.")
     else:
         print(
             "Usage: " + sys.argv[0] +
-            " [checkout | backlog | docker] [REPOSITORY | 'all']")
+            " [checkout | backlog | build | push] [REPOSITORY | 'all']")
 
 
 if __name__ == "__main__":
