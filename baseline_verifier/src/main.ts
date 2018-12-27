@@ -30,7 +30,7 @@ async function main() {
         authService,
         deviceManagerService,
         history,
-        2000);
+        5000);
 
     const tests = [
         (new PublishingHistoryUseCase(config)),

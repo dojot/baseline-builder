@@ -52,8 +52,8 @@ class PublishingHistoryUseCase extends UseCase {
         await this.runPublishHistory("admin", "admin");
         logger.debug("... successfully ran [mqtt publish, get history] test for admin.", TAG);
 
-        const username = "user_" + Math.round(Math.random() * 100);
-        const service = "ten_" + Math.round(Math.random() * 100);
+        const username = "user_" + Math.round(Math.random() * 10000);
+        const service = "ten_" + Math.round(Math.random() * 10000);
         logger.debug(`Creating new user ${username}...`, TAG);
         const user: IUser = {
             email: `${username}@test.com`,
