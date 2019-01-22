@@ -1,18 +1,18 @@
 {
-    "tag": "0.3.0-nightly20181227",
+    "tag": "training-20190122",
     "components": [
         {
             "repository-name": "history",
             "github-repository": "dojot/history",
             "last-commit": "257382679ed2c56ed92f29c8270e79459ecddf76",
-            "current-commit": "0756ad29fdb67d560619281438d213a782d3e0fa",
+            "current-commit": "d12d83e68055c77e5732381eea3a3b9a768cc9d5",
             "docker-hub-repositories": [
                 {
-                    "name": "dojot/history",
+                    "name": "dojotraining/history",
                     "dockerfile": "./docker/history.docker"
                 },
                 {
-                    "name": "dojot/persister",
+                    "name": "dojotraining/persister",
                     "dockerfile": "./docker/persister.docker"
                 }
             ]
@@ -24,7 +24,7 @@
             "current-commit": "82da7986502d35e4ea6f88f7f0922c7b6cbc619c",
             "docker-hub-repositories": [
                 {
-                    "name": "dojot/iotagent-mosca",
+                    "name": "dojotraining/iotagent-mosca",
                     "dockerfile": "./Dockerfile"
                 }
             ]
@@ -32,11 +32,11 @@
         {
             "repository-name": "gui",
             "github-repository": "dojot/gui",
-            "last-commit": "415a923b36824f628b08940d2deb50ebaf3f6f06",
-            "current-commit": "a7d0fe844e66c702d21f434606c4f22678d962ae",
+            "last-commit": "9d20c1e477abb5542ad01d88c825c834210021a8",
+            "current-commit": "9d20c1e477abb5542ad01d88c825c834210021a8",
             "docker-hub-repositories": [
                 {
-                    "name": "dojot/gui",
+                    "name": "dojotraining/gui",
                     "dockerfile": "./docker/Dockerfile"
                 }
             ]
@@ -45,10 +45,10 @@
             "repository-name": "data-broker",
             "github-repository": "dojot/data-broker",
             "last-commit": "be766ef02382ea37722cbd06788c98e597cdc59a",
-            "current-commit": "6cf8e2bcaf51c3e5befd3edd19bd012f03bf32cc",
+            "current-commit": "90288dabee0ba8998414544880621372555e6731",
             "docker-hub-repositories": [
                 {
-                    "name": "dojot/data-broker",
+                    "name": "dojotraining/data-broker",
                     "dockerfile": "./docker/Dockerfile"
                 }
             ]
@@ -57,10 +57,10 @@
             "repository-name": "device-manager",
             "github-repository": "dojot/device-manager",
             "last-commit": "2fb3cd9c735d1a3df055598c142e80b5d1a82c58",
-            "current-commit": "9a5f62f7468909d292a79247cc286365778163b5",
+            "current-commit": "2fb3cd9c735d1a3df055598c142e80b5d1a82c58",
             "docker-hub-repositories": [
                 {
-                    "name": "dojot/device-manager",
+                    "name": "dojotraining/device-manager",
                     "dockerfile": "./Dockerfile"
                 }
             ]
@@ -69,10 +69,10 @@
             "repository-name": "auth",
             "github-repository": "dojot/auth",
             "last-commit": "5519a25ec4a81f739a648083024b0cd117e41611",
-            "current-commit": "efb9150a030fd74437eb1a0bf3617ca4680543e9",
+            "current-commit": "a2cf6b38824ecd8915ee7687e9d7a955d55be184",
             "docker-hub-repositories": [
                 {
-                    "name": "dojot/auth",
+                    "name": "dojotraining/auth",
                     "dockerfile": "./Dockerfile"
                 }
             ]
@@ -84,7 +84,7 @@
             "current-commit": "b1a67a310314eca249b3bb6c30f317f70e9af9d9",
             "docker-hub-repositories": [
                 {
-                    "name": "dojot/kong",
+                    "name": "dojotraining/kong",
                     "dockerfile": "./Dockerfile"
                 }
             ]
@@ -93,14 +93,14 @@
             "repository-name": "flowbroker",
             "github-repository": "dojot/flowbroker",
             "last-commit": "35d93e6c46d9ca2728efc02fc90bc31c5b64ab4e",
-            "current-commit": "b12f60f4c1b4e3a27a7de4ec05baa7171504e267",
+            "current-commit": "35d93e6c46d9ca2728efc02fc90bc31c5b64ab4e",
             "docker-hub-repositories": [
                 {
-                    "name": "dojot/flowbroker",
+                    "name": "dojotraining/flowbroker",
                     "dockerfile": "./orchestrator.docker"
                 },
                 {
-                    "name": "dojot/flowbroker-context-manager",
+                    "name": "dojotraining/flowbroker-context-manager",
                     "dockerfile": "./contextManager.docker"
                 }
             ]
@@ -112,20 +112,8 @@
             "current-commit": "277c97da5f02e06b8bb37bbf0a52ecc1d61384fa",
             "docker-hub-repositories": [
                 {
-                    "name": "dojot/ejbca-rest",
+                    "name": "dojotraining/ejbca-rest",
                     "dockerfile": "./Dockerfile"
-                }
-            ]
-        },
-        {
-            "repository-name": "data-manager",
-            "github-repository": "dojot/data-manager",
-            "last-commit": "968fc04df232a36e6d18310237abf6deca0f2c51",
-            "current-commit": "abe8d64a7c21ddf2e1ee63a6995fbbe1243d6449",
-            "docker-hub-repositories": [
-                {
-                    "name": "dojot/data-manager",
-                    "dockerfile": "./DockerFile"
                 }
             ]
         }
