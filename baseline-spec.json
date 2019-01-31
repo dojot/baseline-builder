@@ -1,5 +1,5 @@
 {
-    "tag": "training-20190122",
+    "tag": "training-20190131",
     "components": [
         {
             "repository-name": "history",
@@ -21,7 +21,7 @@
             "repository-name": "iotagent-mosca",
             "github-repository": "dojot/iotagent-mosca",
             "last-commit": "4484b536bc49f68cea9f708ec5fd301908f83efd",
-            "current-commit": "82da7986502d35e4ea6f88f7f0922c7b6cbc619c",
+            "current-commit": "bc6169aef55c73db3286fc8f865bdd055a50d20f",
             "docker-hub-repositories": [
                 {
                     "name": "dojotraining/iotagent-mosca",
@@ -33,7 +33,7 @@
             "repository-name": "gui",
             "github-repository": "dojot/gui",
             "last-commit": "9d20c1e477abb5542ad01d88c825c834210021a8",
-            "current-commit": "9d20c1e477abb5542ad01d88c825c834210021a8",
+            "current-commit": "3bcd2167190f78bd0c5ffef6ff40cf7989a45b34",
             "docker-hub-repositories": [
                 {
                     "name": "dojotraining/gui",
