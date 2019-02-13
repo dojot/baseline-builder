@@ -1,1 +1,8 @@
+# Downloaded repos
 git_repos/
+
+# Pipenv files
+Pipfile*
+
+# VS Code config files
+.vscode/

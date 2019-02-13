@@ -1,0 +1,123 @@
+{
+    "tag": "0.3.0-nightly",
+    "components": [
+        {
+            "repository-name": "history",
+            "github-repository": "dojot/history",
+            "current-commit": "master",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/history",
+                    "dockerfile": "./docker/history.docker"
+                },
+                {
+                    "name": "dojot/persister",
+                    "dockerfile": "./docker/persister.docker"
+                }
+            ]
+        },
+        {
+            "repository-name": "iotagent-mosca",
+            "github-repository": "dojot/iotagent-mosca",
+            "current-commit": "master",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/iotagent-mosca",
+                    "dockerfile": "./Dockerfile"
+                }
+            ]
+        },
+        {
+            "repository-name": "gui",
+            "github-repository": "dojot/gui",
+            "current-commit": "development",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/gui",
+                    "dockerfile": "./docker/Dockerfile"
+                }
+            ]
+        },
+        {
+            "repository-name": "data-broker",
+            "github-repository": "dojot/data-broker",
+            "current-commit": "master",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/data-broker",
+                    "dockerfile": "./docker/Dockerfile"
+                }
+            ]
+        },
+        {
+            "repository-name": "device-manager",
+            "github-repository": "dojot/device-manager",
+            "current-commit": "master",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/device-manager",
+                    "dockerfile": "./Dockerfile"
+                }
+            ]
+        },
+        {
+            "repository-name": "auth",
+            "github-repository": "dojot/auth",
+            "current-commit": "master",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/auth",
+                    "dockerfile": "./Dockerfile"
+                }
+            ]
+        },
+        {
+            "repository-name": "kong",
+            "github-repository": "dojot/kong",
+            "current-commit": "master",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/kong",
+                    "dockerfile": "./Dockerfile"
+                }
+            ]
+        },
+        {
+            "repository-name": "flowbroker",
+            "github-repository": "dojot/flowbroker",
+            "current-commit": "master",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/flowbroker",
+                    "dockerfile": "./orchestrator.docker"
+                },
+                {
+                    "name": "dojot/flowbroker-context-manager",
+                    "dockerfile": "./contextManager.docker"
+                }
+            ]
+        },
+        {
+            "repository-name": "ejbca-rest",
+            "github-repository": "dojot/ejbca-rest",
+            "current-commit": "master",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/ejbca-rest",
+                    "dockerfile": "./Dockerfile"
+                }
+            ]
+        },
+        {
+            "repository-name": "data-manager",
+            "github-repository": "dojot/data-manager",
+            "current-commit": "master",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/data-manager",
+                    "dockerfile": "./DockerFile"
+                }
+            ]
+        }
+    ]
+}
