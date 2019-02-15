@@ -1,6 +1,8 @@
 import json
 import sys
 import os
+import datetime
+import argparse
 from git import Repo, GitCommandError
 import docker
 import requests
@@ -227,29 +229,46 @@ def main():
     if failed:
         exit(1)
 
+    parser = argparse.ArgumentParser(description='Parameters fot the dojot building process.')
+
+    parser.add_argument('--repository', '-r', dest='selected_repo', default='all',
+                        type=str, help='defines which repository will be handled, default to: all')
+    parser.add_argument('--type', '-t', dest='build_type', default='baseline', choices=['baseline', 'nightly'],
+                        type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
+    parser.add_argument('--command', '-c', dest='command', default='checkout', choices=['checkout', 'build', 'push', 'backlog'],
+                        type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
+
+    args = parser.parse_args()
+
     print("Reading baseline spec file...")
-    raw_spec = open("baseline-spec.json", "r")
+
+    if args.build_type in "baseline":
+        raw_spec = open("baseline-spec.json", "r")
+    elif args.build_type in "nightly":
+        raw_spec = open("nightly-spec.json", "r")
+    else:
+        print("Invalid build type, expected 'nightly' or 'baseline'")
+        exit(1)
+
     # Treat exceptions
     spec = json.loads(raw_spec.read())
-    if len(sys.argv) == 1:
-        checkout_git_repositories(spec, "all")
-    elif len(sys.argv) == 3:
-        selected_repo = sys.argv[2]
-        if sys.argv[1] == "checkout":
-            checkout_git_repositories(spec, selected_repo)
-        if sys.argv[1] == "backlog":
-            build_backlog_messages(spec, selected_repo)
-        if sys.argv[1] == "build":
-            build_docker_baseline(spec, selected_repo)
-        if sys.argv[1] == "push":
-            tag_docker_baseline(spec, selected_repo)
-        else:
-            print("Unknown command.")
-    else:
-        print(
-            "Usage: " + sys.argv[0] +
-            " [checkout | backlog | build | push] [REPOSITORY | 'all']")
 
+    # If nightly build, set the date dinamically
+    if args.build_type in "nightly":
+        spec['tag'] = spec['tag'] + datetime.datetime.now().strftime("%Y%m%d")
+        # TODO: Remove nightlies than are older than an X amount of time
+
+    if args.command in "checkout":
+        checkout_git_repositories(spec, args.selected_repo)
+    elif args.command in "build":
+        build_docker_baseline(spec, args.selected_repo)
+    elif args.command in "push":
+        tag_docker_baseline(spec, args.selected_repo)
+    elif args.command in "backlog":
+        build_backlog_messages(spec, args.selected_repo)
+    else:
+        print("Invalid command selected: " + args.command)
+        exit(1)
 
 if __name__ == "__main__":
     main()
