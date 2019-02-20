@@ -206,6 +206,35 @@ def tag_docker_baseline(spec, selected_repo):
             client.images.push(docker_name + ":" + baseline_tag_name)
             print("... pushed.")
 
+def remove_docker_tags(spec, selected_repo):
+
+    print("Logging into Docker Hub...")
+    login_data = requests.post('https://hub.docker.com/v2/users/login/',
+                               json={"username": os.environ["DOCKER_USERNAME"],
+                                     "password": os.environ["DOCKER_TOKEN"]})
+
+    token = login_data.json().get('token')
+    print("... logged in.")
+
+    for repo_config in spec["components"]:
+        repository_name = repo_config['repository-name']
+
+        if selected_repo != "all" and repository_name != selected_repo:
+            print("Skipping " + repository_name +
+                  " from untagging Docker images.")
+            continue
+
+        for docker_repo in repo_config["docker-hub-repositories"]:
+            organization_name, image_name = docker_repo["name"].split("/")
+            tag_name = spec["tag"]
+
+            print("Removing tag...")
+
+            url = "https://hub.docker.com/v2/repositories/{}/{}/tags/{}/".format(organization_name, image_name, tag_name)
+
+            requests.delete(url, headers={"Authorization": "JWT " + token})
+
+            print("... removed.")
 
 def main():
     print("Starting baseline builder...")
@@ -235,8 +264,11 @@ def main():
                         type=str, help='defines which repository will be handled, default to: all')
     parser.add_argument('--type', '-t', dest='build_type', default='baseline', choices=['baseline', 'nightly'],
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
-    parser.add_argument('--command', '-c', dest='command', default='checkout', choices=['checkout', 'build', 'push', 'backlog'],
+    parser.add_argument('--command', '-c', dest='command', default='checkout',
+                        choices=['checkout', 'build', 'push', 'backlog', 'cleanup'],
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
+    parser.add_argument('--age', default=15, type=int,
+                        help='Age of the containers that will be removed from docker hub')
 
     args = parser.parse_args()
 
@@ -255,8 +287,11 @@ def main():
 
     # If nightly build, set the date dinamically
     if args.build_type in "nightly":
-        spec['tag'] = spec['tag'] + datetime.datetime.now().strftime("%Y%m%d")
-        # TODO: Remove nightlies than are older than an X amount of time
+        if args.command in "cleanup":
+            old_date = datetime.datetime.now().toordinal() - args.age
+            spec['tag'] = spec['tag'] + datetime.datetime.fromordinal(old_date).strftime("%Y%m%d")
+        else:
+            spec['tag'] = spec['tag'] + datetime.datetime.now().strftime("%Y%m%d")
 
     if args.command in "checkout":
         checkout_git_repositories(spec, args.selected_repo)
@@ -266,6 +301,8 @@ def main():
         tag_docker_baseline(spec, args.selected_repo)
     elif args.command in "backlog":
         build_backlog_messages(spec, args.selected_repo)
+    elif args.command in "cleanup":
+        remove_docker_tags(spec, args.selected_repo)
     else:
         print("Invalid command selected: " + args.command)
         exit(1)
