@@ -1,11 +1,11 @@
 {
-    "tag": "58.2-20190321",
+    "tag": "61.1-20190423",
     "components": [
         {
             "repository-name": "history",
             "github-repository": "dojot/history",
             "last-commit": "1e3509f41954c4aecc4bbf49d8f6bfba139ff824",
-            "current-commit": "f4e7b2f41af85feb20780595299a65566e1d3b2d",
+            "current-commit": "bb7870455d3c45517a7a488e065ff44d390c6430",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/history",
@@ -21,7 +21,7 @@
             "repository-name": "iotagent-mosca",
             "github-repository": "dojot/iotagent-mosca",
             "last-commit": "a0b537bc4b9e027e748d8a2d076e42acf8332fa6",
-            "current-commit": "a0b537bc4b9e027e748d8a2d076e42acf8332fa6",
+            "current-commit": "2026206ca6dd9e6c3b7ea0f6ca662a9482c85cb9",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/iotagent-mosca",
@@ -32,8 +32,8 @@
         {
             "repository-name": "cron",
             "github-repository": "dojot/cron",
-            "last-commit": "4e877215257cb7c06e32d065c4dc0bcb2c8c0fa4",
-            "current-commit": "5303d2d28d2dd1c8eb30797455d181284501409b",
+            "last-commit": "5303d2d28d2dd1c8eb30797455d181284501409b",
+            "current-commit": "d261d4d99846c9e02b663e780ef5965b9253340f",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/cron",
@@ -44,8 +44,8 @@
         {
             "repository-name": "gui",
             "github-repository": "dojot/gui",
-            "last-commit": "a7d0fe844e66c702d21f434606c4f22678d962ae",
-            "current-commit": "a5db50a9796a3f2b27316ae1b3621e14386612e3",
+            "last-commit": "a5db50a9796a3f2b27316ae1b3621e14386612e3",
+            "current-commit": "e0df35538f401082448202c5141adcb618cb0784",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/gui",
@@ -56,8 +56,8 @@
         {
             "repository-name": "data-broker",
             "github-repository": "dojot/data-broker",
-            "last-commit": "5cc3da2d2df26014b700a40e2d7c84662bd71f17",
-            "current-commit": "2d236949540bfa42f87b6beba26630bc99ad8e68",
+            "last-commit": "2d236949540bfa42f87b6beba26630bc99ad8e68",
+            "current-commit": "ca8f68f941a032d0d1c3a1c4e055c62654b29274",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/data-broker",
@@ -68,7 +68,7 @@
         {
             "repository-name": "image-manager",
             "github-repository": "dojot/image-manager",
-            "last-commit": "cfc884cc74ad47c5325df7b1e5cbf92c1f8bde67",
+            "last-commit": "12694c7024c65d4432cc384984b93b02e2e637b8",
             "current-commit": "12694c7024c65d4432cc384984b93b02e2e637b8",
             "docker-hub-repositories": [
                 {
@@ -80,8 +80,8 @@
         {
             "repository-name": "device-manager",
             "github-repository": "dojot/device-manager",
-            "last-commit": "4490451a050fdb871a56035a03fee09ee9bdd909",
-            "current-commit": "98ce46b4b5e79dbe7ed5f9b286f84109c2ef37a0",
+            "last-commit": "98ce46b4b5e79dbe7ed5f9b286f84109c2ef37a0",
+            "current-commit": "808af70e7f5cfe0ff06b3e6ad9baee9a88571739",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/device-manager",
@@ -93,7 +93,7 @@
             "repository-name": "auth",
             "github-repository": "dojot/auth",
             "last-commit": "d8937541ebed8720dc48f75bcd79838b5e8e47ad",
-            "current-commit": "d8937541ebed8720dc48f75bcd79838b5e8e47ad",
+            "current-commit": "902318bc7ddbfb70e02ba6a363d15c300f695671",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/auth",
@@ -116,8 +116,8 @@
         {
             "repository-name": "flowbroker",
             "github-repository": "dojot/flowbroker",
-            "last-commit": "cabaf53b1da69326dfeb990ea0b8890e262f1ae9",
-            "current-commit": "ee5c3207ea091f9cc62b21f77b43f5f48e3accac",
+            "last-commit": "ee5c3207ea091f9cc62b21f77b43f5f48e3accac",
+            "current-commit": "e1ea55e3c84e96a8909362bc9f77eb595408467f",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/flowbroker",
@@ -144,11 +144,35 @@
         {
             "repository-name": "data-manager",
             "github-repository": "dojot/data-manager",
-            "last-commit": "da1c85e12305e2a6592f2fe45e4b320415da6612",
-            "current-commit": "25fbae55ba06c3807710752f0d11e692549744dc",
+            "last-commit": "25fbae55ba06c3807710752f0d11e692549744dc",
+            "current-commit": "0ca86bf398caa9ce264a3ca21c08234f8eaad75b",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/data-manager",
+                    "dockerfile": "./DockerFile"
+                }
+            ]
+        },
+        {
+            "repository-name": "iotagent-leshan",
+            "github-repository": "dojot/iotagent-leshan",
+            "last-commit": "e8def2d0f31aff59f0015b0617365d609da2265c",
+            "current-commit": "e8def2d0f31aff59f0015b0617365d609da2265c",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/iotagent-leshan",
+                    "dockerfile": "./Dockerfile"
+                }
+            ]
+        },
+        {
+            "repository-name": "backstage",
+            "github-repository": "dojot/backstage",
+            "last-commit": "245e57b320f24a372b9816061faab39c52755dec",
+            "current-commit": "245e57b320f24a372b9816061faab39c52755dec",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/backstage",
                     "dockerfile": "./DockerFile"
                 }
             ]
