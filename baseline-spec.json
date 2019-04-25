@@ -5,7 +5,7 @@
             "repository-name": "history",
             "github-repository": "dojot/history",
             "last-commit": "1e3509f41954c4aecc4bbf49d8f6bfba139ff824",
-            "current-commit": "bb7870455d3c45517a7a488e065ff44d390c6430",
+            "current-commit": "b96227d2f3fff35b394af4aab13ecd10dd1daa66",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/history",
