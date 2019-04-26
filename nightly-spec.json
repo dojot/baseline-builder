@@ -4,7 +4,7 @@
         {
             "repository-name": "history",
             "github-repository": "dojot/history",
-            "current-commit": "master",
+            "current-commit": "development",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/history",
@@ -19,7 +19,7 @@
         {
             "repository-name": "iotagent-mosca",
             "github-repository": "dojot/iotagent-mosca",
-            "current-commit": "master",
+            "current-commit": "development",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/iotagent-mosca",
@@ -41,7 +41,7 @@
         {
             "repository-name": "data-broker",
             "github-repository": "dojot/data-broker",
-            "current-commit": "master",
+            "current-commit": "development",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/data-broker",
@@ -52,7 +52,7 @@
         {
             "repository-name": "device-manager",
             "github-repository": "dojot/device-manager",
-            "current-commit": "master",
+            "current-commit": "development",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/device-manager",
@@ -63,7 +63,7 @@
         {
             "repository-name": "auth",
             "github-repository": "dojot/auth",
-            "current-commit": "master",
+            "current-commit": "development",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/auth",
@@ -74,7 +74,7 @@
         {
             "repository-name": "kong",
             "github-repository": "dojot/kong",
-            "current-commit": "master",
+            "current-commit": "development",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/kong",
@@ -85,7 +85,7 @@
         {
             "repository-name": "flowbroker",
             "github-repository": "dojot/flowbroker",
-            "current-commit": "master",
+            "current-commit": "development",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/flowbroker",
@@ -100,7 +100,7 @@
         {
             "repository-name": "ejbca-rest",
             "github-repository": "dojot/ejbca-rest",
-            "current-commit": "master",
+            "current-commit": "development",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/ejbca-rest",
@@ -111,7 +111,7 @@
         {
             "repository-name": "data-manager",
             "github-repository": "dojot/data-manager",
-            "current-commit": "master",
+            "current-commit": "development",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/data-manager",
