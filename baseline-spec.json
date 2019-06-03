@@ -1,11 +1,11 @@
 {
-    "tag": "62.2-20190524",
+    "tag": "62.3-20190603",
     "components": [
         {
             "repository-name": "history",
             "github-repository": "dojot/history",
             "last-commit": "c4d4c666e222dc91d6903955af2489cb5df5fbae",
-            "current-commit": "c4d4c666e222dc91d6903955af2489cb5df5fbae",
+            "current-commit": "f83e2d8356b68b5f8de665586e84e520e61e40ab",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/history",
@@ -44,8 +44,8 @@
         {
             "repository-name": "gui",
             "github-repository": "dojot/gui",
-            "last-commit": "d9fba48e3c1f841f0efb87eda2c7bb28af00cc1f",
-            "current-commit": "968e39115b98c83592851f4d4ec8a9d37ead7add",
+            "last-commit": "968e39115b98c83592851f4d4ec8a9d37ead7add",
+            "current-commit": "ccab9bfe5bb8a921fdb54ed9bdf43a8048db65a5",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/gui",
@@ -116,8 +116,8 @@
         {
             "repository-name": "flowbroker",
             "github-repository": "dojot/flowbroker",
-            "last-commit": "17b3c364f09c7694f69039684639d7f3e6efa632",
-            "current-commit": "7379f37a1416aa9b9c75718144f564c6d2ee90a5",
+            "last-commit": "7379f37a1416aa9b9c75718144f564c6d2ee90a5",
+            "current-commit": "87abc96b2270d9b23898908c0443721ccacbd3a4",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/flowbroker",
@@ -144,7 +144,7 @@
         {
             "repository-name": "data-manager",
             "github-repository": "dojot/data-manager",
-            "last-commit": "652783b908209ddc6787c737cddbc858f8cd6873",
+            "last-commit": "724c0120613eb58957f4d0ed49a5dc019eca798b",
             "current-commit": "724c0120613eb58957f4d0ed49a5dc019eca798b",
             "docker-hub-repositories": [
                 {
