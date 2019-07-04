@@ -102,10 +102,10 @@ def checkout_git_repositories(spec, selected_repo):
         repo = Repo.clone_from(repository_url, repository_dest)
         print("... repository was cloned")
 
-        print("Creating branch...")
-        repo.head.reference = repo.create_head('baseline', commit_id)
+        print("Creating branch...") #spec['tag']
+        repo.head.reference = repo.create_head(spec['tag'], commit_id)
         repo.head.reset(index=True, working_tree=True)
-        print("... 'baseline' branch was created")
+        print("... '"+spec['tag']+"' branch was created")
     print("... repositories were checked out.")
 
 
@@ -164,6 +164,25 @@ def push_git_tag(spec, selected_repo):
         print("... all changes were pushed to " + repository_name + ".")
     print("... everything was pushed to GitHub.")
 
+def push_git_branchs(spec, selected_repo):
+    print("Pushing branchs to GitHub...")
+    baseline_branch_name = spec["tag"]
+    for repo_config in spec["components"]:
+        repository_name = repo_config['repository-name']
+
+        if selected_repo != "all" and repository_name != selected_repo:
+            print("Skipping " + repository_name + " from pushing branch.")
+            continue
+
+        repository_dest = "./git_repos/"+repo_config['repository-name']
+        repo = Repo(repository_dest)
+        print("Pushing branch "+baseline_branch_name+" to repository " + repository_name + "...")
+
+        repo.remotes.origin.push(baseline_branch_name)
+        print("... branch was pushed.")
+
+        print("... all changes were pushed to " + repository_name + ".")
+    print("... everything was pushed to GitHub.")
 
 def build_docker_baseline(spec, selected_repo):
     for repo_config in spec["components"]:
@@ -265,7 +284,7 @@ def main():
     parser.add_argument('--type', '-t', dest='build_type', default='baseline', choices=['baseline', 'nightly'],
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
     parser.add_argument('--command', '-c', dest='command', default='checkout',
-                        choices=['checkout', 'build', 'push', 'backlog', 'cleanup'],
+                        choices=['checkout', 'build', 'push', 'backlog', 'cleanup', 'create-branch'],
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
     parser.add_argument('--age', default=15, type=int,
                         help='Age of the containers that will be removed from docker hub')
@@ -297,6 +316,8 @@ def main():
         checkout_git_repositories(spec, args.selected_repo)
     elif args.command in "build":
         build_docker_baseline(spec, args.selected_repo)
+    elif args.command in "create-branchs":
+        push_git_branchs(spec, args.selected_repo)
     elif args.command in "push":
         tag_docker_baseline(spec, args.selected_repo)
     elif args.command in "backlog":
@@ -305,7 +326,7 @@ def main():
         remove_docker_tags(spec, args.selected_repo)
     else:
         print("Invalid command selected: " + args.command)
-        exit(1)
+        exit(1) 
 
 if __name__ == "__main__":
     main()
