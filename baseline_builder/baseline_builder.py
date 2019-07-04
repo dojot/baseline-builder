@@ -102,7 +102,7 @@ def checkout_git_repositories(spec, selected_repo):
         repo = Repo.clone_from(repository_url, repository_dest)
         print("... repository was cloned")
 
-        print("Creating branch...") #spec['tag']
+        print("Creating branch " +spec['tag'] +" ...")
         repo.head.reference = repo.create_head(spec['tag'], commit_id)
         repo.head.reset(index=True, working_tree=True)
         print("... '"+spec['tag']+"' branch was created")
