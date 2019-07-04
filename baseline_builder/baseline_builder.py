@@ -166,8 +166,8 @@ def push_git_tag(spec, selected_repo):
         print("... all changes were pushed to " + repository_name + ".")
     print("... everything was pushed to GitHub.")
 
-def push_git_branchs(spec, selected_repo):
-    print("Pushing branchs to GitHub...")
+def push_git_rc_branchs(spec, selected_repo):
+    print("Pushing relases branchs to GitHub...")
     baseline_branch_name = "release/"+spec["tag"]
     for repo_config in spec["components"]:
         repository_name = repo_config['repository-name']
@@ -178,13 +178,33 @@ def push_git_branchs(spec, selected_repo):
 
         repository_dest = "./git_repos/"+repo_config['repository-name']
         repo = Repo(repository_dest)
-        print("Pushing branch "+baseline_branch_name+" to repository " + repository_name + "...")
+        print("Pushing relases branch "+baseline_branch_name+" to repository " + repository_name + "...")
 
         repo.remotes.origin.push(baseline_branch_name)
         print("... branch was pushed.")
 
         print("... all changes were pushed to " + repository_name + ".")
     print("... everything was pushed to GitHub.")
+
+def push_git_release_to_master(spec, selected_repo):
+    print("Pushing release to master to GitHub...")
+    baseline_branch_name = "release/"+spec["tag"]
+    for repo_config in spec["components"]:
+        repository_name = repo_config['repository-name']
+
+        if selected_repo != "all" and repository_name != selected_repo:
+            print("Skipping " + repository_name + " from pushing release to master.")
+            continue
+
+        repository_dest = "./git_repos/"+repo_config['repository-name']
+        repo = Repo(repository_dest)
+        print("Pushing release to master  to repository " + repository_name + "...")
+
+        repo.remotes.origin.pull_request(refspec=baseline_branch_name+':master')
+        print("... release to master was pushed.")
+
+        print("... all release to master were pushed to " + repository_name + ".")
+    print("... everything was pushed from release to master to GitHub.")
 
 def build_docker_baseline(spec, selected_repo):
     for repo_config in spec["components"]:
@@ -286,7 +306,7 @@ def main():
     parser.add_argument('--type', '-t', dest='build_type', default='baseline', choices=['baseline', 'nightly'],
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
     parser.add_argument('--command', '-c', dest='command', default='checkout',
-                        choices=['checkout', 'build', 'push', 'backlog', 'cleanup', 'create-branch', 'tag'],
+                        choices=['checkout', 'build-docker', 'push-docker', 'backlog', 'cleanup', 'create-rc-branchs', 'tag', 'push-release-to-master'],
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
     parser.add_argument('--age', default=15, type=int,
                         help='Age of the containers that will be removed from docker hub')
@@ -316,11 +336,11 @@ def main():
 
     if args.command in "checkout":
         checkout_git_repositories(spec, args.selected_repo)
-    elif args.command in "build":
+    elif args.command in "build-docker":
         build_docker_baseline(spec, args.selected_repo)
-    elif args.command in "create-branchs":
-        push_git_branchs(spec, args.selected_repo)
-    elif args.command in "push":
+    elif args.command in "create-rc-branchs":
+        push_git_rc_branchs(spec, args.selected_repo)
+    elif args.command in "push-docker":
         tag_docker_baseline(spec, args.selected_repo)
     elif args.command in "backlog":
         build_backlog_messages(spec, args.selected_repo)
@@ -329,6 +349,8 @@ def main():
     elif args.command in "tag":
         create_git_tag(spec, args.selected_repo)
         push_git_tag(spec, args.selected_repo)
+    elif args.command in "push-release-to-master":
+        push_git_release_to_master(spec, args.selected_repo)
     else:
         print("Invalid command selected: " + args.command)
         exit(1) 
