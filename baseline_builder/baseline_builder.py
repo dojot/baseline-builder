@@ -75,6 +75,7 @@ def checkout_git_repositories(spec, selected_repo):
     print("Checking out repositories...")
     username = os.environ["GITHUB_USERNAME"]
     usertoken = os.environ["GITHUB_TOKEN"]
+    branch_name = "release/"+spec['tag'] 
     github_preamble = "https://" + username + ":" + usertoken + "@github.com/"
     print("Creating output directory...")
     try:
@@ -102,16 +103,17 @@ def checkout_git_repositories(spec, selected_repo):
         repo = Repo.clone_from(repository_url, repository_dest)
         print("... repository was cloned")
 
-        print("Creating branch " +spec['tag'] +" ...")
-        repo.head.reference = repo.create_head(spec['tag'], commit_id)
+        print("Creating branch " +branch_name +" ...")
+        repo.head.reference = repo.create_head(branch_name, commit_id)
         repo.head.reset(index=True, working_tree=True)
-        print("... '"+spec['tag']+"' branch was created")
+        print("... '"+branch_name+"' branch was created")
     print("... repositories were checked out.")
 
 
 def create_git_tag(spec, selected_repo):
     print("Creating tag for all repositories...")
     baseline_tag_name = spec["tag"]
+    branch_name = "release/"+spec['tag'] 
     for repo_config in spec["components"]:
         repository_name = repo_config['repository-name']
 
@@ -121,7 +123,7 @@ def create_git_tag(spec, selected_repo):
 
         repository_dest = "./git_repos/"+repo_config['repository-name']
         repo = Repo(repository_dest)
-        baseline_head = repo.heads['baseline']
+        baseline_head = repo.heads[branch_name]
 
         print("Creating tag for repository " + repository_name + "...")
         print("Checking whether tag has already been created...")
@@ -158,7 +160,7 @@ def push_git_tag(spec, selected_repo):
 
         print("Pushing baseline tag...")
         baseline_tag = repo.tags[baseline_tag_name]
-        repo.remotes.origin.push(baseline_tag)
+        repo.remotes.origin.push(baseline_tag) 
         print("... baseline tag was pushed.")
 
         print("... all changes were pushed to " + repository_name + ".")
@@ -166,7 +168,7 @@ def push_git_tag(spec, selected_repo):
 
 def push_git_branchs(spec, selected_repo):
     print("Pushing branchs to GitHub...")
-    baseline_branch_name = spec["tag"]
+    baseline_branch_name = "release/"+spec["tag"]
     for repo_config in spec["components"]:
         repository_name = repo_config['repository-name']
 
@@ -284,7 +286,7 @@ def main():
     parser.add_argument('--type', '-t', dest='build_type', default='baseline', choices=['baseline', 'nightly'],
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
     parser.add_argument('--command', '-c', dest='command', default='checkout',
-                        choices=['checkout', 'build', 'push', 'backlog', 'cleanup', 'create-branch'],
+                        choices=['checkout', 'build', 'push', 'backlog', 'cleanup', 'create-branch', 'tag'],
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
     parser.add_argument('--age', default=15, type=int,
                         help='Age of the containers that will be removed from docker hub')
@@ -324,6 +326,9 @@ def main():
         build_backlog_messages(spec, args.selected_repo)
     elif args.command in "cleanup":
         remove_docker_tags(spec, args.selected_repo)
+    elif args.command in "tag":
+        create_git_tag(spec, args.selected_repo)
+        push_git_tag(spec, args.selected_repo)
     else:
         print("Invalid command selected: " + args.command)
         exit(1) 
