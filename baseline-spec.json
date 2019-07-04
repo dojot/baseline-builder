@@ -57,7 +57,7 @@
             "repository-name": "data-broker",
             "github-repository": "dojot/data-broker",
             "last-commit": "0bc2a3844bbec231343815190035f2b2e1de5bdf",
-            "current-commit": "0bc2a3844bbec231343815190035f2b2e1de5bdf",
+            "current-commit": "de4b2b2ed08067a62d06bc42947916417adfd30f",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/data-broker",
