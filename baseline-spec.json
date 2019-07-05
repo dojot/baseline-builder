@@ -1,10 +1,10 @@
 {
-    "tag": "62.3-20190603",
+    "tag": "63.1-20190705",
     "components": [
         {
             "repository-name": "history",
             "github-repository": "dojot/history",
-            "last-commit": "c4d4c666e222dc91d6903955af2489cb5df5fbae",
+            "last-commit": "f83e2d8356b68b5f8de665586e84e520e61e40ab",
             "current-commit": "f83e2d8356b68b5f8de665586e84e520e61e40ab",
             "docker-hub-repositories": [
                 {
@@ -21,7 +21,7 @@
             "repository-name": "iotagent-mosca",
             "github-repository": "dojot/iotagent-mosca",
             "last-commit": "0a82c3ec1e20eb8a5f9387f8e3ac2631b52c3955",
-            "current-commit": "0a82c3ec1e20eb8a5f9387f8e3ac2631b52c3955",
+            "current-commit": "0dc59a206428990e38056b5954f097d01ba9f76c",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/iotagent-mosca",
@@ -44,8 +44,8 @@
         {
             "repository-name": "gui",
             "github-repository": "dojot/gui",
-            "last-commit": "968e39115b98c83592851f4d4ec8a9d37ead7add",
-            "current-commit": "ccab9bfe5bb8a921fdb54ed9bdf43a8048db65a5",
+            "last-commit": "ccab9bfe5bb8a921fdb54ed9bdf43a8048db65a5",
+            "current-commit": "65592ce939265e3d0d8d1f62ea7bdd5498e737d6",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/gui",
@@ -57,7 +57,7 @@
             "repository-name": "data-broker",
             "github-repository": "dojot/data-broker",
             "last-commit": "0bc2a3844bbec231343815190035f2b2e1de5bdf",
-            "current-commit": "0bc2a3844bbec231343815190035f2b2e1de5bdf",
+            "current-commit": "de4b2b2ed08067a62d06bc42947916417adfd30f",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/data-broker",
@@ -116,8 +116,8 @@
         {
             "repository-name": "flowbroker",
             "github-repository": "dojot/flowbroker",
-            "last-commit": "7379f37a1416aa9b9c75718144f564c6d2ee90a5",
-            "current-commit": "87abc96b2270d9b23898908c0443721ccacbd3a4",
+            "last-commit": "87abc96b2270d9b23898908c0443721ccacbd3a4",
+            "current-commit": "1de44a29c01dcbede61201fd010a7f2a1ec3e9af",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/flowbroker",
@@ -145,7 +145,7 @@
             "repository-name": "data-manager",
             "github-repository": "dojot/data-manager",
             "last-commit": "724c0120613eb58957f4d0ed49a5dc019eca798b",
-            "current-commit": "724c0120613eb58957f4d0ed49a5dc019eca798b",
+            "current-commit": "1aadb33ae4f673afb2b53fc2323b6c1ade3df8b5",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/data-manager",
