@@ -29,6 +29,8 @@ def build_backlog_message(repo, repository_name, last_commit, current_commit):
     print("Building backlog messages for repository " + repository_name)
     while commit_it.hexsha != last_commit:
         commit_it = list(repo.iter_commits(current_commit, max_count=1, skip=offset))[0]
+        if commit_it.hexsha == last_commit:
+            break
         searchObj = re.match("Merge pull request #(.*) from .*", commit_it.message)
         if searchObj:
             pr = searchObj.group(1)
