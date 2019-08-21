@@ -63,9 +63,10 @@ def create_pr(repoId, repository_name, branchTo="master", branchFrom="developmen
     r = requests.post("https://api.github.com/graphql", json=requestCreatePR, headers={
         'Authorization': 'bearer ' + github_api_token, 'Content-Type': 'application/json'})
 
-    if "errors" in r.json() :
-        print("Cant create PR branchTo:"+branchTo+" branchFrom:"+branchFrom+ " repository:"+repository_name)
-        print( r.json())
+    if "errors" in r.json():
+        print("Cant create PR branchTo:"+branchTo+" branchFrom:" +
+              branchFrom + " repository:"+repository_name)
+        print(r.json())
 
 
 def create_prs(spec, selected_repo, branch_from, branch_to):
@@ -81,11 +82,10 @@ def create_prs(spec, selected_repo, branch_from, branch_to):
         owner = repo_info[0]
         repository_name = repo_info[1]
         repoID = get_repository_id(repository_name, owner)
-        
-        title_pr = "Merge baseline "+spec['tag']; 
-        
-        create_pr(repoID,repository_name, branch_to, branch_from,title_pr)
 
+        title_pr = "Merge baseline "+spec['tag']
+
+        create_pr(repoID, repository_name, branch_to, branch_from, title_pr)
 
 
 def build_backlog_message(repo, repository_name, last_commit, current_commit):
@@ -186,6 +186,53 @@ def checkout_git_repositories(spec, selected_repo):
     print("... repositories were checked out.")
 
 
+def checkout_git_repositories_from_a_branch (spec, selected_repo, release_branch_from):
+    print("Checking out repositories...")
+    username = os.environ["GITHUB_USERNAME"]
+    usertoken = os.environ["GITHUB_TOKEN"]
+
+    github_preamble = "https://" + username + ":" + usertoken + "@github.com/"
+   
+    print("Creating output directory...")
+    try:
+        os.stat("./git_repos_release")
+    except:
+        os.mkdir("./git_repos_release")
+    print("... output repository directory created.")
+
+    for repo_config in spec["components"]:
+        repository_name = repo_config['repository-name']
+
+        if selected_repo != "all" and repository_name != selected_repo:
+            print("Skipping " + repository_name + " from checkout.")
+            continue
+        
+        print(repo_config["docker-hub-repositories"])
+
+        if not "docker-hub-repositories" in repo_config:
+            print(repo_config['repository-name'])
+            print(repo_config['docker-hub-repositories'])
+            print("No image to pushing in " + repository_name)
+            continue
+
+        repository_url = github_preamble + repo_config['github-repository']
+        repository_dest = "./git_repos_release/"+repo_config['repository-name']
+        # commit_id = repo_config['current-commit']
+
+        print("Checking out for release" + repository_name)
+        print("From GitHub repository " + repo_config['github-repository'])
+        origin = Repo.create_remote('origin', url=Repo.working_tree_dir)
+
+        print("Cloning repository...")
+        repo = Repo.clone_from(repository_url, repository_dest)
+        print("... repository was cloned")
+
+        print("Creating branch " + release_branch_from + " ...")
+        repo.head.reference = repo.create_head('master', origin.refs.master)
+        repo.head.reset(index=True, working_tree=True)
+        print("... '"+release_branch_from+"' branch was created")
+    print("... repositories were checked out.")
+
 def create_git_tag(spec, selected_repo):
     print("Creating tag for all repositories...")
     baseline_tag_name = spec["tag"]
@@ -274,7 +321,7 @@ def build_docker_baseline(spec, selected_repo):
                   " from pushing Docker images.")
             continue
 
-        if not hasattr(repo_config, "docker-hub-repositories"):
+        if not "docker-hub-repositories" in repo_config:
             print("No image to generate in " + repository_name)
             continue
 
@@ -304,7 +351,7 @@ def tag_docker_baseline(spec, selected_repo):
                   " from pushing Docker images.")
             continue
 
-        if not hasattr(repo_config, "docker-hub-repositories"):
+        if not "docker-hub-repositories" in repo_config:
             print("No image to pushing in " + repository_name)
             continue
 
@@ -335,7 +382,7 @@ def remove_docker_tags(spec, selected_repo):
                   " from untagging Docker images.")
             continue
 
-        if not hasattr(repo_config, "docker-hub-repositories"):
+        if not "docker-hub-repositories" in repo_config:
             print("No image to generate in " + repository_name)
             continue
 
@@ -384,7 +431,7 @@ def main():
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
     parser.add_argument('--command', '-c', dest='command', default='checkout',
                         choices=['checkout', 'build', 'push',
-                                 'backlog', 'cleanup', 'create-branch', 'create-tags', 'create-prs'],
+                                 'backlog', 'cleanup', 'create-branch', 'create-tags', 'create-prs', 'create-release'],
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
     parser.add_argument('--age', default=15, type=int,
                         help='Age of the containers that will be removed from docker hub')
@@ -392,6 +439,10 @@ def main():
                         help='Branch from to create o PR, only for create-prs')
     parser.add_argument('--branchto', dest='branch_to', default='master', type=str,
                         help='Branch destination to create o PR, only for create-prs')
+    parser.add_argument('--releasename', dest='release_name', default='release', type=str,
+                        help='Name of new release')
+    parser.add_argument('--releasebranchfrom', dest='release_branch_from', default='master', type=str,
+                        help='Name of branch to generate release')
 
     args = parser.parse_args()
 
@@ -435,6 +486,12 @@ def main():
         push_git_tag(spec, args.selected_repo)
     elif args.command in "create-prs":
         create_prs(spec, args.selected_repo, args.branch_from, args.branch_to)
+    elif args.command in "create-release":
+        release_name = args.release_name
+        release_branch_from = args.branch_to
+
+        checkout_git_repositories_from_a_branch(spec, args.selected_repo, release_branch_from)
+
     else:
         print("Invalid command selected: " + args.command)
         exit(1)
