@@ -176,6 +176,72 @@
                     "dockerfile": "./DockerFile"
                 }
             ]
+        },
+        {
+            "repository-name": "dojot-module-nodejs",
+            "github-repository": "dojot/dojot-module-nodejs",
+            "last-commit": "145f0aab81919856bb5eb9b53dfb5e94c97df22a",
+            "current-commit": "145f0aab81919856bb5eb9b53dfb5e94c97df22a"
+        },
+        {
+            "repository-name": "dojot-module-logger-nodejs",
+            "github-repository": "dojot/dojot-module-logger-nodejs",
+            "last-commit": "867fe89b8c5f2d127220eef3fb561ffe8ba3e966",
+            "current-commit": "867fe89b8c5f2d127220eef3fb561ffe8ba3e966"
+        },
+        {
+            "repository-name": "iotagent-nodejs",
+            "github-repository": "dojot/iotagent-nodejs",
+            "last-commit": "03e948aa7e4db2235a882bf776657723f9683a52",
+            "current-commit": "03e948aa7e4db2235a882bf776657723f9683a52"
+        },  
+        {
+            "repository-name": "dojot-module-python",
+            "github-repository": "dojot/dojot-module-python",
+            "last-commit": "f0b24ead338c501609be19b953035937a18064be",
+            "current-commit": "f0b24ead338c501609be19b953035937a18064be"
+        },
+        {
+            "repository-name": "dojot-module-java",
+            "github-repository": "dojot/dojot-module-java",
+            "last-commit": "6e9cebd903a00e65ac7a9fac00333d769e2fb7a9",
+            "current-commit": "6e9cebd903a00e65ac7a9fac00333d769e2fb7a9"
+        },
+        {
+            "repository-name": "iotagent-java",
+            "github-repository": "dojot/iotagent-java",
+            "last-commit": "9235705b17ae4a9ca75c1109102cf176c9ce328f",
+            "current-commit": "9235705b17ae4a9ca75c1109102cf176c9ce328f"
+        },
+        {
+            "repository-name": "healthcheck-nodejs",
+            "github-repository": "dojot/healthcheck-nodejs",
+            "last-commit": "251b3fb137b16925730c21d9460b577c97bb8308",
+            "current-commit": "251b3fb137b16925730c21d9460b577c97bb8308"
+        },
+        {
+            "repository-name": "healthcheck-python",
+            "github-repository": "dojot/healthcheck-python",
+            "last-commit": "21e1fce833cb4a24eda28edf06e968678604817e",
+            "current-commit": "21e1fce833cb4a24eda28edf06e968678604817e"
+        },
+        {
+            "repository-name": "libadminkafka",
+            "github-repository": "dojot/libadminkafka",
+            "last-commit": "e558bb894cd311dc46202955162d5e93e9f1845f",
+            "current-commit": "e558bb894cd311dc46202955162d5e93e9f1845f"
+        },
+        {
+            "repository-name": "libKafka_nodejs",
+            "github-repository": "dojot/libKafka_nodejs",
+            "last-commit": "07f2761874764c5a46337b3306cfdf0eac9aad4f",
+            "current-commit": "07f2761874764c5a46337b3306cfdf0eac9aad4f"
+        },
+        {
+            "repository-name": "pep-kong",
+            "github-repository": "dojot/pep-kong",
+            "last-commit": "19d881edff8ccc238e03aa0bc373382bfb9c376a",
+            "current-commit": "19d881edff8ccc238e03aa0bc373382bfb9c376a"
         }
     ]
 }
