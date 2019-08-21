@@ -1,5 +1,5 @@
 {
-    "tag": "63.1-20190705",
+    "tag": "63.2-20190820",
     "components": [
         {
             "repository-name": "history",
@@ -20,8 +20,8 @@
         {
             "repository-name": "iotagent-mosca",
             "github-repository": "dojot/iotagent-mosca",
-            "last-commit": "0a82c3ec1e20eb8a5f9387f8e3ac2631b52c3955",
-            "current-commit": "0dc59a206428990e38056b5954f097d01ba9f76c",
+            "last-commit": "0dc59a206428990e38056b5954f097d01ba9f76c",
+            "current-commit": "56dfa9d037897d9f6cb3ae84a41d1e255ae005fe",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/iotagent-mosca",
@@ -44,8 +44,8 @@
         {
             "repository-name": "gui",
             "github-repository": "dojot/gui",
-            "last-commit": "ccab9bfe5bb8a921fdb54ed9bdf43a8048db65a5",
-            "current-commit": "65592ce939265e3d0d8d1f62ea7bdd5498e737d6",
+            "last-commit": "65592ce939265e3d0d8d1f62ea7bdd5498e737d6",
+            "current-commit": "8f9ca37931139f64be192a6c0015348b3446aad6",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/gui",
@@ -56,7 +56,7 @@
         {
             "repository-name": "data-broker",
             "github-repository": "dojot/data-broker",
-            "last-commit": "0bc2a3844bbec231343815190035f2b2e1de5bdf",
+            "last-commit": "de4b2b2ed08067a62d06bc42947916417adfd30f",
             "current-commit": "de4b2b2ed08067a62d06bc42947916417adfd30f",
             "docker-hub-repositories": [
                 {
@@ -116,8 +116,8 @@
         {
             "repository-name": "flowbroker",
             "github-repository": "dojot/flowbroker",
-            "last-commit": "87abc96b2270d9b23898908c0443721ccacbd3a4",
-            "current-commit": "1de44a29c01dcbede61201fd010a7f2a1ec3e9af",
+            "last-commit": "1de44a29c01dcbede61201fd010a7f2a1ec3e9af",
+            "current-commit": "2a281974df032e2411bf59459aec3f43adbf7c54",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/flowbroker",
@@ -144,7 +144,7 @@
         {
             "repository-name": "data-manager",
             "github-repository": "dojot/data-manager",
-            "last-commit": "724c0120613eb58957f4d0ed49a5dc019eca798b",
+            "last-commit": "1aadb33ae4f673afb2b53fc2323b6c1ade3df8b5",
             "current-commit": "1aadb33ae4f673afb2b53fc2323b6c1ade3df8b5",
             "docker-hub-repositories": [
                 {
@@ -157,7 +157,7 @@
             "repository-name": "iotagent-leshan",
             "github-repository": "dojot/iotagent-leshan",
             "last-commit": "f96d8a9e7a165df793f4a979fea8efac30ad5e03",
-            "current-commit": "f96d8a9e7a165df793f4a979fea8efac30ad5e03",
+            "current-commit": "5a6213359df745a2579eae898fac56604cca6311",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/iotagent-leshan",
