@@ -151,7 +151,7 @@ def checkout_git_repositories(spec, selected_repo):
     print("Checking out repositories...")
     username = os.environ["GITHUB_USERNAME"]
     usertoken = os.environ["GITHUB_TOKEN"]
-    branch_name = "release/"+spec['tag']
+    branch_name = "release/"+spec['tag'] 
     github_preamble = "https://" + username + ":" + usertoken + "@github.com/"
     print("Creating output directory...")
     try:
@@ -179,57 +179,12 @@ def checkout_git_repositories(spec, selected_repo):
         repo = Repo.clone_from(repository_url, repository_dest)
         print("... repository was cloned")
 
-        print("Creating branch " + branch_name + " ...")
+        print("Creating branch " +branch_name +" ...")
         repo.head.reference = repo.create_head(branch_name, commit_id)
         repo.head.reset(index=True, working_tree=True)
         print("... '"+branch_name+"' branch was created")
     print("... repositories were checked out.")
-
-
-
-    print("Checking out repositories...")
-    username = os.environ["GITHUB_USERNAME"]
-    usertoken = os.environ["GITHUB_TOKEN"]
-
-    github_preamble = "https://" + username + ":" + usertoken + "@github.com/"
-   
-    print("Creating output directory...")
-    try:
-        os.stat("./git_repos_release")
-    except:
-        os.mkdir("./git_repos_release")
-    print("... output repository directory created.")
-
-    for repo_config in spec["components"]:
-        repository_name = repo_config['repository-name']
-
-        if selected_repo != "all" and repository_name != selected_repo:
-            print("Skipping " + repository_name + " from checkout.")
-            continue
-        
-        print(repo_config["docker-hub-repositories"])
-
-        if not "docker-hub-repositories" in repo_config:
-            print("No image to pushing in " + repository_name)
-            continue
-
-        repository_url = github_preamble + repo_config['github-repository']
-        repository_dest = "./git_repos_release/"+repo_config['repository-name']
-        # commit_id = repo_config['current-commit']
-
-        print("Checking out for release" + repository_name)
-        print("From GitHub repository " + repo_config['github-repository'])
-        origin = Repo.create_remote('origin', url=Repo.working_tree_dir)
-
-        print("Cloning repository...")
-        repo = Repo.clone_from(repository_url, repository_dest)
-        print("... repository was cloned")
-
-        print("Creating branch " + release_branch_from + " ...")
-        repo.head.reference = repo.create_head('master', origin.refs.master)
-        repo.head.reset(index=True, working_tree=True)
-        print("... '"+release_branch_from+"' branch was created")
-    print("... repositories were checked out.")
+    
 
 def create_git_tag(spec, selected_repo):
     print("Creating tag for all repositories...")
