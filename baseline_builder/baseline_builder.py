@@ -62,7 +62,7 @@ def create_pr(repoId, repository_name, branchTo="master", branchFrom="developmen
     requestCreatePR['variables']['branchFrom'] = branchFrom
     requestCreatePR['variables']['repoId'] = repoId
 
-    print("Criating PR for " + repository_name +
+    print("Creating PR for " + repository_name +
           "from " + branchFrom + " to " + branchTo)
 
     r = requests.post("https://api.github.com/graphql", json=requestCreatePR, headers={
