@@ -27,6 +27,8 @@ def retrieve_pr(repository_name, pr):
 def get_repository_id(repository_name, owner="dojot"):
     github_api_token = os.environ["GITHUB_API_TOKEN"]
 
+    print("Getting Repository id for "+owner+"/"+repository_name)
+
     requestRepoId = {
         "query": "query ($owner: String!, $repoName: String!) {repository(owner: $owner, name: $repoName) {id}}",
         "variables": {"owner": "dojot", "repoName": "undefinied"}
@@ -60,6 +62,9 @@ def create_pr(repoId, repository_name, branchTo="master", branchFrom="developmen
     requestCreatePR['variables']['branchFrom'] = branchFrom
     requestCreatePR['variables']['repoId'] = repoId
 
+    print("Criating PR for " + repository_name +
+          "from " + branchFrom + " to " + branchTo)
+
     r = requests.post("https://api.github.com/graphql", json=requestCreatePR, headers={
         'Authorization': 'bearer ' + github_api_token, 'Content-Type': 'application/json'})
 
@@ -70,9 +75,12 @@ def create_pr(repoId, repository_name, branchTo="master", branchFrom="developmen
 
 
 def create_prs(spec, selected_repo, branch_from, branch_to):
+
     for repo_config in spec["components"]:
         repository_name = repo_config['repository-name']
         github_repository = repo_config['github-repository']
+
+        print("Create PR for "+repository_name)
 
         if selected_repo != "all" and repository_name != selected_repo:
             print("Skipping " + repository_name + " from merging.")
@@ -151,7 +159,7 @@ def checkout_git_repositories(spec, selected_repo):
     print("Checking out repositories...")
     username = os.environ["GITHUB_USERNAME"]
     usertoken = os.environ["GITHUB_TOKEN"]
-    branch_name = "release/"+spec['tag'] 
+    branch_name = "release/"+spec['tag']
     github_preamble = "https://" + username + ":" + usertoken + "@github.com/"
     print("Creating output directory...")
     try:
@@ -179,12 +187,12 @@ def checkout_git_repositories(spec, selected_repo):
         repo = Repo.clone_from(repository_url, repository_dest)
         print("... repository was cloned")
 
-        print("Creating branch " +branch_name +" ...")
+        print("Creating branch " + branch_name + " ...")
         repo.head.reference = repo.create_head(branch_name, commit_id)
         repo.head.reset(index=True, working_tree=True)
         print("... '"+branch_name+"' branch was created")
     print("... repositories were checked out.")
-    
+
 
 def create_git_tag(spec, selected_repo):
     print("Creating tag for all repositories...")
@@ -201,7 +209,8 @@ def create_git_tag(spec, selected_repo):
         repo = Repo(repository_dest)
         baseline_head = repo.heads[branch_name]
 
-        print("Creating tag for repository " + repository_name + "...")
+        print("Creating tag "+baseline_tag_name +
+              " for repository " + repository_name + "...")
         print("Checking whether tag has already been created...")
 
         if (baseline_tag_name in repo.tags):
@@ -312,7 +321,7 @@ def tag_docker_baseline(spec, selected_repo):
             docker_name = docker_repo["name"]
             baseline_tag_name = spec["tag"]
 
-            print("Pushing new tag...")
+            print("Pushing new tag... " + docker_name + ":" + baseline_tag_name)
             client.images.push(docker_name + ":" + baseline_tag_name)
             print("... pushed.")
 
