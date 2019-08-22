@@ -186,7 +186,7 @@ def checkout_git_repositories(spec, selected_repo):
     print("... repositories were checked out.")
 
 
-def checkout_git_repositories_from_a_branch (spec, selected_repo, release_branch_from):
+
     print("Checking out repositories...")
     username = os.environ["GITHUB_USERNAME"]
     usertoken = os.environ["GITHUB_TOKEN"]
@@ -210,8 +210,6 @@ def checkout_git_repositories_from_a_branch (spec, selected_repo, release_branch
         print(repo_config["docker-hub-repositories"])
 
         if not "docker-hub-repositories" in repo_config:
-            print(repo_config['repository-name'])
-            print(repo_config['docker-hub-repositories'])
             print("No image to pushing in " + repository_name)
             continue
 
@@ -431,7 +429,7 @@ def main():
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
     parser.add_argument('--command', '-c', dest='command', default='checkout',
                         choices=['checkout', 'build', 'push',
-                                 'backlog', 'cleanup', 'create-branch', 'create-tags', 'create-prs', 'create-release'],
+                                 'backlog', 'cleanup', 'create-branch', 'create-tags', 'create-prs'],
                         type=str, help='Sets the type of build that will be executed, the value can be either baseline or nightly')
     parser.add_argument('--age', default=15, type=int,
                         help='Age of the containers that will be removed from docker hub')
@@ -439,10 +437,6 @@ def main():
                         help='Branch from to create o PR, only for create-prs')
     parser.add_argument('--branchto', dest='branch_to', default='master', type=str,
                         help='Branch destination to create o PR, only for create-prs')
-    parser.add_argument('--releasename', dest='release_name', default='release', type=str,
-                        help='Name of new release')
-    parser.add_argument('--releasebranchfrom', dest='release_branch_from', default='master', type=str,
-                        help='Name of branch to generate release')
 
     args = parser.parse_args()
 
@@ -486,11 +480,6 @@ def main():
         push_git_tag(spec, args.selected_repo)
     elif args.command in "create-prs":
         create_prs(spec, args.selected_repo, args.branch_from, args.branch_to)
-    elif args.command in "create-release":
-        release_name = args.release_name
-        release_branch_from = args.branch_to
-
-        checkout_git_repositories_from_a_branch(spec, args.selected_repo, release_branch_from)
 
     else:
         print("Invalid command selected: " + args.command)
