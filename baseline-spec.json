@@ -45,7 +45,7 @@
             "repository-name": "gui",
             "github-repository": "dojot/gui",
             "last-commit": "65592ce939265e3d0d8d1f62ea7bdd5498e737d6",
-            "current-commit": "8f9ca37931139f64be192a6c0015348b3446aad6",
+            "current-commit": "7c31484ff044ae83acf6173e3bd3edcb1e4b9ba1",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/gui",
