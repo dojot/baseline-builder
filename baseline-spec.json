@@ -242,6 +242,12 @@
             "github-repository": "dojot/pep-kong",
             "last-commit": "19d881edff8ccc238e03aa0bc373382bfb9c376a",
             "current-commit": "19d881edff8ccc238e03aa0bc373382bfb9c376a"
+        },
+        {
+            "repository-name": "certificate-retriever",
+            "github-repository": "dojot/certificate-retriever",
+            "last-commit": "1b9eb2d49769e8b42245391a4c34f7e28c5418aa",
+            "current-commit": "1b9eb2d49769e8b42245391a4c34f7e28c5418aa"
         }
     ]
 }
