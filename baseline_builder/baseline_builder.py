@@ -49,12 +49,13 @@ def create_pr(repoId, repository_name, branchTo="master", branchFrom="developmen
     github_api_token = os.environ["GITHUB_API_TOKEN"]
 
     requestCreatePR = {
-        "query": "mutation ($branchTo: String!, $titlePR: String!, $branchFrom: String!, $repoId: ID!) { createPullRequest(input: {baseRefName: $branchTo, title: $titlePR, repositoryId: $repoId, headRefName: $branchFrom, maintainerCanModify: true}) { pullRequest { title id } }}",
+        "query": "mutation ($branchTo: String!, $titlePR: String!, $branchFrom: String!, $repoId: ID!, $body:String) { createPullRequest(input: {baseRefName: $branchTo, title: $titlePR, body:$body, repositoryId: $repoId, headRefName: $branchFrom, maintainerCanModify: true}) { pullRequest { title id } }}",
         "variables": {
             "branchTo": "",
             "titlePR": "",
             "branchFrom": "",
-            "repoId": ""
+            "repoId": "",
+            "body": "Do not update this branch!"
         }
     }
     requestCreatePR['variables']['branchTo'] = branchTo
