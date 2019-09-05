@@ -248,6 +248,12 @@
             "github-repository": "dojot/certificate-retriever",
             "last-commit": "79fffbfd151a47cced64f7daabef99674cd80bdb",
             "current-commit": "1b9eb2d49769e8b42245391a4c34f7e28c5418aa"
+        },
+        {
+            "repository-name": "docs",
+            "github-repository": "dojot/docs",
+            "last-commit": "a5e694b81a104f8b1933920d0043c7ab7b74d3be",
+            "current-commit": "e55215977305939b3ba842b5019bef68ce56f5fe"
         }
     ]
 }
