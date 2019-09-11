@@ -254,6 +254,12 @@
             "github-repository": "dojot/docs",
             "last-commit": "a5e694b81a104f8b1933920d0043c7ab7b74d3be",
             "current-commit": "e55215977305939b3ba842b5019bef68ce56f5fe"
+        },
+        {
+            "repository-name": "docker-compose",
+            "github-repository": "dojot/docker-compose",
+            "last-commit": "bc39c1579108331a2822d6d665302a417a076e88",
+            "current-commit": "bc39c1579108331a2822d6d665302a417a076e88"
         }
     ]
 }
