@@ -260,6 +260,12 @@
             "github-repository": "dojot/docker-compose",
             "last-commit": "bc39c1579108331a2822d6d665302a417a076e88",
             "current-commit": "bc39c1579108331a2822d6d665302a417a076e88"
+        },
+        {
+            "repository-name": "ansible-dojot",
+            "github-repository": "dojot/ansible-dojot",
+            "last-commit": "6233d4c0e25917bb575c89bf5c04a13171da051e",
+            "current-commit": "6233d4c0e25917bb575c89bf5c04a13171da051e"
         }
     ]
 }
