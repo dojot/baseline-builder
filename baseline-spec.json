@@ -154,6 +154,18 @@
             ]
         },
         {
+            "repository-name": "iotagent-leshan",
+            "github-repository": "dojot/iotagent-leshan",
+            "last-commit": "5a6213359df745a2579eae898fac56604cca6311",
+            "current-commit": "5a6213359df745a2579eae898fac56604cca6311",
+            "docker-hub-repositories": [
+                {
+                    "name": "dojot/iotagent-leshan",
+                    "dockerfile": "./Dockerfile"
+                }
+            ]
+        },
+        {
             "repository-name": "backstage",
             "github-repository": "dojot/backstage",
             "last-commit": "245e57b320f24a372b9816061faab39c52755dec",
