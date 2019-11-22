@@ -1,10 +1,10 @@
 {
-    "tag": "v0.4.1_rc1",
+    "tag": "v0.4.1_rc2",
     "components": [
         {
             "repository-name": "history",
             "github-repository": "dojot/history",
-            "last-commit": "58d88dbe520001d6b46bcedf3027f6e2bb67d723",
+            "last-commit": "ca9e73b4492cf7ff2cc8ec0d4ad05ee96be13430",
             "current-commit": "ca9e73b4492cf7ff2cc8ec0d4ad05ee96be13430",
             "docker-hub-repositories": [
                 {
@@ -44,8 +44,8 @@
         {
             "repository-name": "gui",
             "github-repository": "dojot/gui",
-            "last-commit": "7c31484ff044ae83acf6173e3bd3edcb1e4b9ba1",
-            "current-commit": "672f5c072099301d51d5f284690dda1213d477d2",
+            "last-commit": "672f5c072099301d51d5f284690dda1213d477d2",
+            "current-commit": "f4ad13a40fb3724a8f09b33c5295a5b6a10cd723",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/gui",
@@ -92,8 +92,8 @@
         {
             "repository-name": "auth",
             "github-repository": "dojot/auth",
-            "last-commit": "d5042492678702b8b577a96700f3600950fca4ce",
-            "current-commit": "c8da440cf27b6982c033d2fe9f53894750588a0a",
+            "last-commit": "c8da440cf27b6982c033d2fe9f53894750588a0a",
+            "current-commit": "31907e0fc53eb0c1fc3ff31d8609dcb8ae3cd5bd",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/auth",
@@ -116,7 +116,7 @@
         {
             "repository-name": "flowbroker",
             "github-repository": "dojot/flowbroker",
-            "last-commit": "cccc3c0dda4be6e6a4145823cbcd65aaacb40852",
+            "last-commit": "534e3005bebc25c83a61ae5c5573301b92a7b419",
             "current-commit": "534e3005bebc25c83a61ae5c5573301b92a7b419",
             "docker-hub-repositories": [
                 {
@@ -132,7 +132,7 @@
         {
             "repository-name": "ejbca-rest",
             "github-repository": "dojot/ejbca-rest",
-            "last-commit": "d752437f8e2888abe46cbd37eb39c7de2733e020",
+            "last-commit": "493dd2f4229c146e8a33071915c1166c61468a64",
             "current-commit": "493dd2f4229c146e8a33071915c1166c61468a64",
             "docker-hub-repositories": [
                 {
