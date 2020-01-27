@@ -1,5 +1,5 @@
 {
-    "tag": "v0.4.1",
+    "tag": "v0.4.2-rc.1",
     "components": [
         {
             "repository-name": "history",
@@ -44,8 +44,8 @@
         {
             "repository-name": "gui",
             "github-repository": "dojot/gui",
-            "last-commit": "672f5c072099301d51d5f284690dda1213d477d2",
-            "current-commit": "f4ad13a40fb3724a8f09b33c5295a5b6a10cd723",
+            "last-commit": "f4ad13a40fb3724a8f09b33c5295a5b6a10cd723",
+            "current-commit": "5f9fc0eedb8805e1701c5d0fc3452ead6fb377fe",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/gui",
@@ -56,8 +56,8 @@
         {
             "repository-name": "data-broker",
             "github-repository": "dojot/data-broker",
-            "last-commit": "de4b2b2ed08067a62d06bc42947916417adfd30f",
-            "current-commit": "de4b2b2ed08067a62d06bc42947916417adfd30f",
+            "last-commit": "e38137fd9e6023024ce4512a98eafba4c1ac6c04",
+            "current-commit": "e38137fd9e6023024ce4512a98eafba4c1ac6c04",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/data-broker",
@@ -117,7 +117,7 @@
             "repository-name": "flowbroker",
             "github-repository": "dojot/flowbroker",
             "last-commit": "5cd88d627bae6e15f70a1a844f75419f86ef4ef5",
-            "current-commit": "5cd88d627bae6e15f70a1a844f75419f86ef4ef5",
+            "current-commit": "bf2c4b9efba120c9338c690560466d4e13534723",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/flowbroker",
@@ -133,7 +133,7 @@
             "repository-name": "ejbca-rest",
             "github-repository": "dojot/ejbca-rest",
             "last-commit": "cba447c04e7398ddfafad3035abd67766279dd9a",
-            "current-commit": "cba447c04e7398ddfafad3035abd67766279dd9a",
+            "current-commit": "391b580a20b0a8ac48204c833c8093b435063437",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/ejbca-rest",
