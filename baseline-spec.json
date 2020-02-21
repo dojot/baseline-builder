@@ -1,5 +1,5 @@
 {
-    "tag": "v0.4.2-rc.1",
+    "tag": "v0.4.2",
     "components": [
         {
             "repository-name": "history",
@@ -117,7 +117,7 @@
             "repository-name": "flowbroker",
             "github-repository": "dojot/flowbroker",
             "last-commit": "5cd88d627bae6e15f70a1a844f75419f86ef4ef5",
-            "current-commit": "bf2c4b9efba120c9338c690560466d4e13534723",
+            "current-commit": "39bc62adfb20331237633555d512f0804675c891",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/flowbroker",
