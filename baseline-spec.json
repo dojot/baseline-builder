@@ -45,7 +45,7 @@
             "repository-name": "gui",
             "github-repository": "dojot/gui",
             "last-commit": "f4ad13a40fb3724a8f09b33c5295a5b6a10cd723",
-            "current-commit": "5f9fc0eedb8805e1701c5d0fc3452ead6fb377fe",
+            "current-commit": "900d08fd6566513be8748f39b9c4fbd58105962d",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/gui",
@@ -117,7 +117,7 @@
             "repository-name": "flowbroker",
             "github-repository": "dojot/flowbroker",
             "last-commit": "5cd88d627bae6e15f70a1a844f75419f86ef4ef5",
-            "current-commit": "39bc62adfb20331237633555d512f0804675c891",
+            "current-commit": "907fa8ecfba75e41afb15397635f7952d0004b4b",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/flowbroker",
@@ -133,7 +133,7 @@
             "repository-name": "ejbca-rest",
             "github-repository": "dojot/ejbca-rest",
             "last-commit": "cba447c04e7398ddfafad3035abd67766279dd9a",
-            "current-commit": "391b580a20b0a8ac48204c833c8093b435063437",
+            "current-commit": "f942f03101d532bb78d43b1244fbd7e42352f498",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/ejbca-rest",
@@ -188,12 +188,6 @@
             "github-repository": "dojot/certificate-retriever",
             "last-commit": "1b9eb2d49769e8b42245391a4c34f7e28c5418aa",
             "current-commit": "1b9eb2d49769e8b42245391a4c34f7e28c5418aa"
-        },
-        {
-            "repository-name": "docs",
-            "github-repository": "dojot/docs",
-            "last-commit": "6975c0db4c8fded5ff0a2286282366b4a60864dc",
-            "current-commit": "6975c0db4c8fded5ff0a2286282366b4a60864dc"
         }
     ]
 }
