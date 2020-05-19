@@ -15,11 +15,23 @@ def retrieve_pr(repository_name, pr):
     r = requests.get("https://api.github.com/repos/" + repository_name + "/pulls/" + pr, headers={
                      'Authorization': 'token ' + github_api_token, 'User-Agent': 'dojot-baseline-builder'})
     if "body" in r.json():
+        # print(r.json())
+        # print("\n")
+        # print("#################"+r.json()["body"]+"#################")
+        # print("\n\n\n")
         pr_comment = r.json()["body"]
         title = r.json()["title"]
-        reg = re.compile("(dojot\/dojot#.[0-9]+)")
-        ret = reg.findall(pr_comment)
-        return [title, ret]
+        if not pr_comment is None:
+            pr_comment = (pr_comment.replace(
+                "https://github.com/dojot/dojot/issues/", "dojot/dojot#"))
+
+            pr_comment = (pr_comment.replace(
+                "http://github.com/dojot/dojot/issues/", "dojot/dojot#"))
+
+            reg = re.compile("(dojot\/dojot#.[0-9]+)")
+            ret = reg.findall(pr_comment)
+            return [title, ret]
+        return [title, ""]
     else:
         return ["PR not found", "none"]
 
