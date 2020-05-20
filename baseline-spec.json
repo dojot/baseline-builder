@@ -21,7 +21,7 @@
             "repository-name": "iotagent-mosca",
             "github-repository": "dojot/iotagent-mosca",
             "last-commit": "a8bca18e1e9951f124e5ad12b6680b44d9f3dc7a",
-            "current-commit": "60a10ee0923ae118de23a15ba58fc756bf77a04b",
+            "current-commit": "346b7c8118ed04845a2c7f739a10d363c6853fc7",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/iotagent-mosca",
