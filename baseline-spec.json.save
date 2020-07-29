@@ -68,7 +68,7 @@
 	{
             "repository-name": "vmq-operator",
             "github-repository": "dojot/vmq-operator",
-            "last-commit": "3079609cee458795c6bc094480fe3b68b93ddce7",
+            "last-commit": "c77b09cad59e6e7804bfec88a05c42423a62b165",
             "current-commit": "c77b09cad59e6e7804bfec88a05c42423a62b165",
             "docker-hub-repositories": [
                 {
@@ -116,7 +116,7 @@
         {
             "repository-name": "kong",
             "github-repository": "dojot/kong",
-            "last-commit": "c9d6794ea049436fac724ed7e5da2869819eeeac",
+            "last-commit": "4b6786cd6d762879f8192f5d560f7dc647d8ed6f",
             "current-commit": "8e1dd885f9aa9ce39b4a79e34d497a93c68be03d",
             "docker-hub-repositories": [
                 {
