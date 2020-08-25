@@ -123,6 +123,11 @@ def build_backlog_message(repo, repository_name, last_commit, current_commit):
             break
         searchObj = re.match(
             "Merge pull request #(.*) from .*", commit_it.message)
+
+        # to squash PR
+        regex = r"\(#[0-9]*\)"
+        matches = re.search(regex, commit_it.message)
+
         if searchObj:
             pr = searchObj.group(1)
             message = repository_name + "#" + pr
@@ -134,6 +139,20 @@ def build_backlog_message(repo, repository_name, last_commit, current_commit):
                     message += " " + issue
             message += ": " + title
             messages.append(message)
+
+        if matches:
+            pr = matches.group().replace("(#", "")
+            pr = pr.replace(")", "")
+            message = repository_name + "#" + pr
+            print("Retrieving information for PR " + message)
+            title, issues = retrieve_pr(repository_name, pr)
+            if issues:
+                message += ", fixing"
+                for issue in issues:
+                    message += " " + issue
+            message += ": " + title
+            messages.append(message)
+
         offset = offset + 1
     if messages:
         message = repository_name + "\n"
@@ -172,7 +191,7 @@ def checkout_git_repositories(spec, selected_repo):
     print("Checking out repositories...")
     username = os.environ["GITHUB_USERNAME"]
     usertoken = os.environ["GITHUB_TOKEN"]
-    branch_name = "release/"+spec['tag']
+    branch_name = "release/"+spec['version']
     github_preamble = "https://" + username + ":" + usertoken + "@github.com/"
     print("Creating output directory...")
     try:
@@ -210,7 +229,7 @@ def checkout_git_repositories(spec, selected_repo):
 def create_git_tag(spec, selected_repo):
     print("Creating tag for all repositories...")
     baseline_tag_name = spec["tag"]
-    branch_name = "release/"+spec['tag']
+    branch_name = "release/"+spec['version']
     for repo_config in spec["components"]:
         repository_name = repo_config['repository-name']
 
@@ -248,6 +267,11 @@ def push_git_tag(spec, selected_repo):
     for repo_config in spec["components"]:
         repository_name = repo_config['repository-name']
 
+        if 'create-tag' in repo_config and repo_config['create-tag'] == False:
+            print("Skipping " + repository_name +
+                  " from pushing tag. create-tag=false")
+            continue
+
         if selected_repo != "all" and repository_name != selected_repo:
             print("Skipping " + repository_name + " from pushing tag.")
             continue
@@ -267,7 +291,7 @@ def push_git_tag(spec, selected_repo):
 
 def push_git_branchs(spec, selected_repo):
     print("Pushing branchs to GitHub...")
-    baseline_branch_name = "release/"+spec["tag"]
+    baseline_branch_name = "release/"+spec["version"]
     for repo_config in spec["components"]:
         repository_name = repo_config['repository-name']
 
