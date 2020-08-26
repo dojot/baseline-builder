@@ -290,6 +290,7 @@ def push_git_tag(spec, selected_repo):
 
 
 def push_git_branchs(spec, selected_repo):
+
     print("Pushing branchs to GitHub...")
     baseline_branch_name = "release/"+spec["version"]
     for repo_config in spec["components"]:
