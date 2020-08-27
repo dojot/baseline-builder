@@ -158,7 +158,7 @@
             "repository-name": "backstage",
             "github-repository": "dojot/backstage",
             "last-commit": "d3d835a32db8306e29a20c8a5ddf69f0004d0a3c",
-            "current-commit": "fde082147d38e373261e07152474b41201646b7c",
+            "current-commit": "946efbab9192d2b3770185fc126a5cd19fa9e35c",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/backstage",
