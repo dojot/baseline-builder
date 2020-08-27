@@ -46,7 +46,7 @@
             "repository-name": "gui",
             "github-repository": "dojot/gui",
             "last-commit": "e05c02e46d5871bc0369870203ae19dbe89ce737",
-            "current-commit": "2680a68020227d4d60a4207802b663a699c79605",
+            "current-commit": "7888038c51b17bd4dcab920fce0b3ddfe216c0bd",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/gui",
@@ -189,7 +189,7 @@
             "repository-name": "ansible-dojot",
             "github-repository": "dojot/ansible-dojot",
             "last-commit": "2bdd51a65bd7c7a71541ccf9f50dc0461d909a81",
-            "current-commit": "86daa2ca320ce510bd6a054c3a3710c2a0585c27",
+            "current-commit": "0e29521c399e23f16ed859784d05f13fd2084482",
             "create-tag": false
         }
     ]
