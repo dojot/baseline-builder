@@ -185,10 +185,17 @@
             "current-commit": "61c88bea78c8609fc42be0014541b3eeea706d0e"
         },
         {
+            "repository-name": "docs",
+            "github-repository": "dojot/docs",
+            "last-commit": "502afbee8dfd76431cf2cf30a5b78e7eb0f5c48a",
+            "current-commit": "502afbee8dfd76431cf2cf30a5b78e7eb0f5c48a",
+            "create-tag": false
+        },
+        {
             "repository-name": "docker-compose",
             "github-repository": "dojot/docker-compose",
             "last-commit": "15189d51fa55ce9c03dfc12a3cc2268ad599dc78",
-            "current-commit": "25aebb61a5f66df99ddb088e40c1cc2eb789cd10",
+            "current-commit": "15189d51fa55ce9c03dfc12a3cc2268ad599dc78",
             "create-tag": false
         },
         {
