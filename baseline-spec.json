@@ -179,6 +179,12 @@
             "current-commit": "2e05641fb89bafa328eee8ab0bb42a61b721c50e"
         },
         {
+            "repository-name": "gui-v2",
+            "github-repository": "dojot/gui-v2",
+            "last-commit": "f69dc46e51ae93aac5b850dc7986bc85901c81fe",
+            "current-commit": "61c88bea78c8609fc42be0014541b3eeea706d0e"
+        },
+        {
             "repository-name": "docker-compose",
             "github-repository": "dojot/docker-compose",
             "last-commit": "15189d51fa55ce9c03dfc12a3cc2268ad599dc78",
