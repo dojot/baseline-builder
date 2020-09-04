@@ -67,7 +67,7 @@ def create_pr(repoId, repository_name, branchTo="master", branchFrom="developmen
             "titlePR": "",
             "branchFrom": "",
             "repoId": "",
-            "body": "Do not update this branch!"
+            "body": "Be careful, see if it is necessary to update the branch!"
         }
     }
     requestCreatePR['variables']['branchTo'] = branchTo
@@ -104,7 +104,8 @@ def create_prs(spec, selected_repo, branch_from, branch_to):
         repository_name = repo_info[1]
         repoID = get_repository_id(repository_name, owner)
 
-        title_pr = "Merge baseline "+spec['tag']
+        title_pr = "Merge version "+spec['tag']+" from branch "+branch_from + \
+            " to branch "+branch_to
 
         create_pr(repoID, repository_name, branch_to, branch_from, title_pr)
 
