@@ -131,11 +131,11 @@ def build_backlog_message(repo, repository_name, last_commit, current_commit):
 
         if searchObj:
             pr = searchObj.group(1)
-            message = repository_name + "#" + pr
+            message = " - [ ] "+repository_name + "#" + pr
             print("Retrieving information for PR " + message)
             title, issues = retrieve_pr(repository_name, pr)
             if issues:
-                message += ", fixing"
+                message += ", linked issues"
                 for issue in issues:
                     message += " " + issue
             message += ": " + title
@@ -144,11 +144,11 @@ def build_backlog_message(repo, repository_name, last_commit, current_commit):
         if matches:
             pr = matches.group().replace("(#", "")
             pr = pr.replace(")", "")
-            message = repository_name + "#" + pr
+            message = " - [ ] "+repository_name + "#" + pr
             print("Retrieving information for PR " + message)
             title, issues = retrieve_pr(repository_name, pr)
             if issues:
-                message += ", fixing"
+                message += ", linked issues"
                 for issue in issues:
                     message += " " + issue
             message += ": " + title
