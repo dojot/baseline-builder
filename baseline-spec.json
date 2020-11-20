@@ -176,13 +176,13 @@
             "repository-name": "dojot",
             "github-repository": "dojot/dojot",
             "last-commit": "e7ca057b35f66fee901dcfa558093217af100522",
-            "current-commit": "4668ec1658ba97a0e2e084d3b28d4ebf58d1927b"
+            "current-commit": "531360c6880d5020f76108cc3e93745d718c4d86"
         },
         {
             "repository-name": "gui-v2",
             "github-repository": "dojot/gui-v2",
             "last-commit": "4cb2be6b47c5271ad258d765664e0d917724f706",
-            "current-commit": "ba93362640feb986414b0fabb833068b1d39fcb0"
+            "current-commit": "4933d8004e9d4d711b14ecded8dd150c18b9d363"
         },
         {
             "repository-name": "docs",
@@ -202,7 +202,7 @@
             "repository-name": "ansible-dojot",
             "github-repository": "dojot/ansible-dojot",
             "last-commit": "bfa9c57270725be0666fae11ac484dae0c7436b7",
-            "current-commit": "1296f2159c47edbd7c5aa51c88cda570240ce3b7",
+            "current-commit": "e146734e7461740117ff3089df64498dcf8f7f56",
             "create-tag": false
         }
     ]
