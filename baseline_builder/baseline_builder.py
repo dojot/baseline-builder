@@ -67,7 +67,7 @@ def create_pr(repoId, repository_name, branchTo="master", branchFrom="developmen
             "titlePR": "",
             "branchFrom": "",
             "repoId": "",
-            "body": "Be careful, see if it is necessary to update the branch!"
+            "body": "Be careful, see if it is necessary to update the branch! **Most likely it is not to update.**"
         }
     }
     requestCreatePR['variables']['branchTo'] = branchTo
