@@ -1,6 +1,6 @@
 {
     "version": "v0.5.1",
-    "tag": "v0.5.1-rc.1",
+    "tag": "v0.5.1-rc.2",
     "components": [
         {
             "repository-name": "history",
@@ -169,8 +169,8 @@
         {
             "repository-name": "dojot",
             "github-repository": "dojot/dojot",
-            "last-commit": "531360c6880d5020f76108cc3e93745d718c4d86",
-            "current-commit": "5987bc75c99d69d0a9da3557c5d5901a34ea9cad"
+            "last-commit": "5987bc75c99d69d0a9da3557c5d5901a34ea9cad",
+            "current-commit": "5cddd1a2d5ad32b5ab76657c5c0cc1e8771eb9fb"
         },
         {
             "repository-name": "gui-v2",
@@ -189,14 +189,14 @@
             "repository-name": "docker-compose",
             "github-repository": "dojot/docker-compose",
             "last-commit": "dab21e633cf28897ca1d30edcf40b75bed82e119",
-            "current-commit": "dab21e633cf28897ca1d30edcf40b75bed82e119",
+            "current-commit": "cd3b6833d5a4359f5ff28bff7eb42366569006ab",
             "create-tag": false
         },
         {
             "repository-name": "ansible-dojot",
             "github-repository": "dojot/ansible-dojot",
             "last-commit": "e146734e7461740117ff3089df64498dcf8f7f56",
-            "current-commit": "e146734e7461740117ff3089df64498dcf8f7f56",
+            "current-commit": "5d4a9f7bce3ec1a2f30b5668dc898ef208aa42a0",
             "create-tag": false
         }
     ]
