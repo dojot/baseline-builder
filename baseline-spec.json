@@ -70,7 +70,7 @@
             "repository-name": "image-manager",
             "github-repository": "dojot/image-manager",
             "last-commit": "dc72e8fb49b467792c055a2e05a4675ca445d803",
-            "current-commit": "TODO dc72e8fb49b467792c055a2e05a4675ca445d803",
+            "current-commit": "156cc5a9b1c0a7f7cd95e299df7daaef2da1b527",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/image-manager",
@@ -82,7 +82,7 @@
             "repository-name": "device-manager",
             "github-repository": "dojot/device-manager",
             "last-commit": "b3dae46658f22c522480e99f7e8fb4153f7910fd",
-            "current-commit": "TODO b3dae46658f22c522480e99f7e8fb4153f7910fd",
+            "current-commit": "bade24ed1eb2e0f48b208bf19ccc9d1a1c46e73e",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/device-manager",
@@ -146,7 +146,7 @@
             "repository-name": "iotagent-leshan",
             "github-repository": "dojot/iotagent-leshan",
             "last-commit": "1083733ca02b82389f8d90a2eac3224ca6512183",
-            "current-commit": "TODO 1083733ca02b82389f8d90a2eac3224ca6512183",
+            "current-commit": "e5da8526d7bf4cd9ceeade80c582a381478c81bb",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/iotagent-leshan",
@@ -158,7 +158,7 @@
             "repository-name": "backstage",
             "github-repository": "dojot/backstage",
             "last-commit": "203a09dcf5271c9c6a33e1956a264bc709968e68",
-            "current-commit": "TODO 203a09dcf5271c9c6a33e1956a264bc709968e68",
+            "current-commit": "f9c2d52e7fec454b31ff6b7d9c3628f835704f5e",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/backstage",
@@ -189,14 +189,14 @@
             "repository-name": "docker-compose",
             "github-repository": "dojot/docker-compose",
             "last-commit": "cd3b6833d5a4359f5ff28bff7eb42366569006ab",
-            "current-commit": "fba93194935a5983a04b92cdd9d2b2f36308b100",
+            "current-commit": "e52bc42f612e23201d91e75a8a6cb3d82ec0566f",
             "create-tag": false
         },
         {
             "repository-name": "ansible-dojot",
             "github-repository": "dojot/ansible-dojot",
             "last-commit": "5d4a9f7bce3ec1a2f30b5668dc898ef208aa42a0",
-            "current-commit": "c6ce095dadc20a556f8b26bc162f8620c1ae3d43",
+            "current-commit": "a9e0686a9e1e007ff1523b83bb70350b8b5806a7",
             "create-tag": false
         }
     ]
