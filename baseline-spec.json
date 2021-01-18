@@ -146,7 +146,7 @@
             "repository-name": "iotagent-leshan",
             "github-repository": "dojot/iotagent-leshan",
             "last-commit": "1083733ca02b82389f8d90a2eac3224ca6512183",
-            "current-commit": "e5da8526d7bf4cd9ceeade80c582a381478c81bb",
+            "current-commit": "fad9f685d67b7453adc3ed733bcd8d400de91ce4",
             "docker-hub-repositories": [
                 {
                     "name": "dojot/iotagent-leshan",
@@ -170,7 +170,7 @@
             "repository-name": "dojot",
             "github-repository": "dojot/dojot",
             "last-commit": "5cddd1a2d5ad32b5ab76657c5c0cc1e8771eb9fb",
-            "current-commit": "6071fbd8be7617a17989ff6bf4ad6f5aa28f737e"
+            "current-commit": "09452642e9ba321b023fa8a9b493d0373cf10901"
         },
         {
             "repository-name": "gui-v2",
