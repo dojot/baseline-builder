@@ -1,6 +1,6 @@
 {
     "version": "v0.5.1",
-    "tag": "v0.5.1-rc.2",
+    "tag": "v0.5.1",
     "components": [
         {
             "repository-name": "history",
@@ -169,7 +169,7 @@
         {
             "repository-name": "dojot",
             "github-repository": "dojot/dojot",
-            "last-commit": "5987bc75c99d69d0a9da3557c5d5901a34ea9cad",
+            "last-commit": "531360c6880d5020f76108cc3e93745d718c4d86",
             "current-commit": "5cddd1a2d5ad32b5ab76657c5c0cc1e8771eb9fb"
         },
         {
