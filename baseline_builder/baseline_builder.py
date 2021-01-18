@@ -2,6 +2,7 @@ import json
 import sys
 import os
 import datetime
+import time
 import argparse
 from git import Repo, GitCommandError
 import docker
@@ -105,6 +106,7 @@ def create_prs(spec, selected_repo, branch_from, branch_to):
             " to branch "+branch_to
 
         create_pr(repoID, repository_name, branch_to, branch_from, title_pr)
+        time.sleep(5)
 
 
 def build_backlog_message(repo, repository_name, last_commit, current_commit):
