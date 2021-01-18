@@ -170,7 +170,7 @@
             "repository-name": "dojot",
             "github-repository": "dojot/dojot",
             "last-commit": "5cddd1a2d5ad32b5ab76657c5c0cc1e8771eb9fb",
-            "current-commit": "09452642e9ba321b023fa8a9b493d0373cf10901"
+            "current-commit": "396925fbc9345059d69507b9b2cfa21746e384d1"
         },
         {
             "repository-name": "gui-v2",
@@ -189,14 +189,14 @@
             "repository-name": "docker-compose",
             "github-repository": "dojot/docker-compose",
             "last-commit": "cd3b6833d5a4359f5ff28bff7eb42366569006ab",
-            "current-commit": "e52bc42f612e23201d91e75a8a6cb3d82ec0566f",
+            "current-commit": "2db3049990e7c44b01d4d5d0fd084197ad4a47d4",
             "create-tag": false
         },
         {
             "repository-name": "ansible-dojot",
             "github-repository": "dojot/ansible-dojot",
             "last-commit": "5d4a9f7bce3ec1a2f30b5668dc898ef208aa42a0",
-            "current-commit": "a9e0686a9e1e007ff1523b83bb70350b8b5806a7",
+            "current-commit": "a3741b80813f2c3fecd88cf067f0bdc03421d9cf",
             "create-tag": false
         }
     ]
